@@ -1,4 +1,10 @@
-<h1><%=@email.object%></h1>
-<p><%=@email.body%></p>
+<h5 class="card-header">Objet: <%=@email.object%></h5>
+<p>Message : <%=@email.body%></p>
 
-<%= link_to "Supprimer", email_path(@email), method: :delete, class: "btn btn-danger", remote: true %>
+<%= link_to "Supprimer", email_path(@email), method: :delete, class: "btn btn-dark", remote: true %>
+<% if @email.read==true %>
+<%= link_to "Marquer comme non lu", email_path, method: :patch, class: "btn btn-dark", remote: true %>
+<% else%>
+<%= link_to "Marquer comme lu", email_path, method: :patch, class: "btn btn-light", remote: true %>
+<%end%>
+

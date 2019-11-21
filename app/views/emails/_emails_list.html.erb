@@ -1,6 +1,6 @@
-<ul id="emails" >
+<ul>
 	  <% @emails.each do |email|  %>
-	    <li>
+	    <li id="<%=email.id%>" class="list-group-item index_<%=email.read%>">
 	      <%= link_to email.object, email_path(email.id), remote: true%>
 	    </li>
 	  <% end %>

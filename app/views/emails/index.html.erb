@@ -1,19 +1,18 @@
 <container>
-	 <%= form_tag(emails_path, method: "post", class: "form", remote: true)  do %>
-	 <%= submit_tag("Recevoir un email", class: "btn btn-start-order") %>
-	 <%end%>
-<div class="row">
-	<div class="col-3">
-		<h1> Voici la liste des emails </h1>
-		<ul id="emails" >
-			  <% @emails.each do |email|  %>
-			    <li id="<%=email.id%>">
-			      <%= link_to email.object, email_path(email.id), remote: true%>
-			    </li>
-			  <% end %>
-		</ul>
+	<div class="row justify-content-center">
+		 <%= form_tag(emails_path, method: "post", class: "form", remote: true)  do %>
+		 <%= submit_tag("Recevoir un email", class: "btn btn-start-order bg-light") %>
+		 <%end%>
 	</div>
-	<div class="col-6" id="content">
+	<div class="row justify-content-center">
+		<div class="col-3 p-0">
+			<h5 class="card-header"> Voici la liste des emails </h5>
+			<div id="emails_list" class="card-body">
+				<%= render 'emails_list' %>
+			</div>
+		</div>
+		<div class="col-6 p-0" id="content">
+			<h5 class="card-header" id="noselection"> Selectionnez un email </h5>
+		</div>
 	</div>
-</div>
 </container>

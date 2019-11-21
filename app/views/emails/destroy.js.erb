@@ -1,5 +1,4 @@
-alert("Email supprimé");
-document.getElementById("content").innerHTML ="Email supprimé";
-document.getElementById("<%=@email.id%>").remove();
+document.getElementById("content").innerHTML ="<h5 class='card-header' id='noselection'> Selectionnez un email </h5>";
+document.getElementById("emails_list").innerHTML ="<%= j render 'emails_list'%>";
 
 

@@ -18,5 +18,5 @@ require 'faker'
   end
 end
 10.times do
-  Email.create(object: Faker::Superhero.power, body: Faker::Lorem.sentence)
+  Email.create(object: Faker::Superhero.power, body: Faker::Lorem.sentence, read: false)
 end
